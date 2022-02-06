@@ -1,6 +1,6 @@
 const element = selector => document.querySelector(selector);
 const modalAreaClasses = element('.modalArea').classList;
-['.closeModal', '.modalBg'].forEach(id =>
+['.modalBg'].forEach(id =>
   element(id).onclick = () =>
     modalAreaClasses.toggle('is-show')
 );
