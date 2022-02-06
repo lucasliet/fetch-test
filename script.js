@@ -22,14 +22,15 @@ async function fetchImages() {
   const img = document.createElement('img');
   img.src = url;
 
-  element('main').appendChild(img);
   img.onclick = () => {
-    img.onclick = undefined;
+    const elClone = img.cloneNode(true)
+    elClone.onclick = undefined;
     element('#modalBody')
-      .replaceChild(
-        img.cloneNode(true),
-        element('#modalBody').firstChild
+    .replaceChild(
+      elClone,
+      element('#modalBody').firstChild
       );
-    modalAreaClasses.toggle('is-show');
-  };
-}
+      modalAreaClasses.toggle('is-show');
+    };
+    element('main').appendChild(img);
+  }
