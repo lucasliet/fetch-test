@@ -7,12 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IBAGENS!</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/lucasliet/Finn-CSS/main/assets/favicon.ico" type="image/x-icon">
   <script defer src="script.js"></script>
 </head>
 
 <body>
-  <header>
+  <header class="topHeader">
     <h1>IBAGENS!</h1>
+    <p>
+      Somente um treino de css,
+      manipulação do DOM em javascript,
+      e uso do fetch com api publica de imagens.
+    </p>
+    <p><small>clique para dispersar</small></p>
   </header>
 
   <main></main>
@@ -20,8 +27,8 @@
   <section class="modalArea">
     <div class="modalBg">
       <div class="modalContent">
-        <div class="closeModal">&times;</div>
-        <div id="modalBody"><img /></div>
+        <span class="closeModal">&times;</span>
+        <img />
       </div>
     </div>
   </section>

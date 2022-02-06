@@ -10,31 +10,81 @@ body {
   overflow: hidden;
 }
 
-header>h1 {
+header p {
+  visibility: hidden;
+  opacity: 0;
+  margin: 0;
+  height: 0;
+  width: 0;
+}
+
+.topHeader {
   position: fixed;
   opacity: .5;
   top: .5rem;
   left: 50%;
   transform: translatex(-50%);
   background: #eee;
-  font: bold 30px/50px sans-serif;
+  font: 1rem sans-serif;
   text-align: center;
   color: #222;
   margin: 0;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  transition: .4s;
+  transition: ease-in-out .2s;
   border-radius: 15px;
 }
 
-header>h1:hover {
+.topHeader:hover {
   opacity: 1;
   width: 100%;
   top: 0;
   background: linear-gradient(96.17deg, #494949 0%, #0c0c0c 92.95%);
   color: #fff;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.centerHeader {
+  opacity: .9;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 33vh;
+  width: 33vw;
+  top: calc(50vh - 16.5vh);
+  left: 50%;
+  transform: translatex(-50%);
+  background: #eee;
+  font: 1rem sans-serif;
+  text-align: center;
+  color: #222;
+  margin: 0;
+  padding: .5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transition: ease-in-out .2s;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.centerHeader>h1 {
+  margin: 0
+}
+
+.centerHeader>p {
+  visibility: visible;
+  opacity: 1;
+  font-size: 1.5rem;
+  height: auto;
+  width: auto;
+}
+
+.centerHeader>p>small {
+  opacity: .6;
 }
 
 main {
@@ -52,9 +102,35 @@ main>img {
   border-radius: 15px;
 }
 
-div[id=modalBody]>img {
+#modalBody>img {
   max-height: 100vh;
   max-width: 100vw;
+}
+
+@media screen and (max-width:768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .centerHeader {
+    width: 80vw;
+  }
+
+  .centerHeader>p {
+    font-size: 1.2rem;
+  }
+
+  main {
+    flex-direction: row;
+    height: 100%;
+  }
+
+  main>img {
+    min-width: calc(100% - 10px);
+    max-width: calc(100% - 10px);
+    max-height: 100%;
+    object-fit: cover;
+  }
 }
 
 .modalArea {
@@ -66,7 +142,7 @@ div[id=modalBody]>img {
   left: 0;
   width: 100vw;
   height: 100vh;
-  transition: .4s;
+  transition: ease-in-out .2s;
 }
 
 .modalBg {
@@ -79,14 +155,16 @@ div[id=modalBody]>img {
 }
 
 .closeModal {
+  align-items: center;
   font-size: xx-large;
   color: white;
   position: absolute;
   top: 0.5rem;
   right: 1rem;
-  padding: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+  padding-bottom: 1.3rem;
   cursor: pointer;
 }
 
